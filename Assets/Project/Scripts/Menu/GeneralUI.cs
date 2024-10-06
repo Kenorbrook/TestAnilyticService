@@ -18,7 +18,7 @@ namespace MainMenu
         {
             _play.onClick.AddListener(() =>
             {
-                Analytic.SendEvent("StartLevel",$"level:{PlayerDataChanger.data.level}");
+                AnalyticService.TrackEvent("StartLevel",$"level:{PlayerDataChanger.data.level}");
                 SceneLoader.PlayScene();
             });
         }

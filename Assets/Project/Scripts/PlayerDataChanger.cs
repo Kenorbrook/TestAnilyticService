@@ -28,7 +28,7 @@ public static class PlayerDataChanger
         if (data.achievement.Contains(name))
             return;
 
-        Analytic.SendEvent("getAchievement", name);
+        AnalyticService.TrackEvent("getAchievement", name);
         data.achievement.Add(name);
         SaveData();
     }
@@ -41,7 +41,7 @@ public static class PlayerDataChanger
 
     public static void RemoveMoney(int count)
     {
-        Analytic.SendEvent("spendMoney", $"count:{count}");
+        AnalyticService.TrackEvent("spendMoney", $"count:{count}");
         data.money -= count;
         SaveData();
     }

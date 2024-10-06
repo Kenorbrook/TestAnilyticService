@@ -2,11 +2,14 @@ using Analytics;
 using UnityEngine;
 
 public class Bootstrap : MonoBehaviour
-{
-    void Awake()
+{ 
+    
+    [SerializeField] private string _serverUrl = "myurl";
+
+    private void Awake()
     {
         PlayerDataChanger.LoadData();
-        Analytic.Initializate();
+        AnalyticService.Initialize(_serverUrl);
     }
 
 }
